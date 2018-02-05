@@ -9,7 +9,7 @@ package boletin19;
  *
  * @author dani
  */
-public class Libro{
+public class Libro implements Comparable{
     private String titulo,autor,isbn;
     private float precio,unidades;
 
@@ -67,6 +67,17 @@ public class Libro{
     @Override
     public String toString(){
         return "titulo: "+titulo+", autor: "+autor+", isbn: "+isbn+", precio: "+precio+", unidades: "+unidades;
+    }
+    
+    @Override
+    public int compareTo(Object t) {
+        Libro l=(Libro) t;
+        if(titulo.compareToIgnoreCase(l.getTitulo())>0)
+            return 1;
+        else if(titulo.compareToIgnoreCase(l.getTitulo())==0)
+            return 0;
+        else
+            return -1;
     }
     
 }

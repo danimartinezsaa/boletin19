@@ -6,6 +6,7 @@
 package boletin19;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,10 +45,11 @@ public class Libreria{
     }
     
     public void mostrarLibros(){
-        if(libros.size()>=1)
+        if(libros.size()>=1){
+            Collections.sort(libros);
             for(Libro elemento: libros)
                 System.out.println(elemento.toString());
-        else
+        }else
             JOptionPane.showMessageDialog(null,"No hay libros para mostrar."); 
     }
     
