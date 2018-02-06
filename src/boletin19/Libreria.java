@@ -55,9 +55,10 @@ public class Libreria{
     
     public void eliminarLibrosSinUnidades(){
         boolean bandera=false;
-        for(Libro elemento: libros)
-            if(elemento.getUnidades()==0){
-                libros.remove(elemento);
+        for(int i=0;i<libros.size();i++)
+            if(libros.get(i).getUnidades()==0){
+                libros.remove(i);
+                i--;
                 JOptionPane.showMessageDialog(null,"Libros sin unidades eliminados.");
                 bandera=true;
             }
